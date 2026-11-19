@@ -407,6 +407,7 @@
       z-index: 8;
       opacity: 0;
       visibility: hidden;
+      display: none;
       transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.75s cubic-bezier(0.22, 1, 0.36, 1), max-height 0.75s cubic-bezier(0.22, 1, 0.36, 1), z-index 0s linear 0.2s;
       pointer-events: none;
       overflow: hidden;
@@ -414,6 +415,7 @@
     }
 
     .invitation-card-container.popped-out {
+      display: block;
       z-index: 35;
       opacity: 1;
       visibility: visible;
@@ -423,16 +425,6 @@
       transform: translateY(-130px) scale(1);
       pointer-events: auto;
       transition: opacity 0.25s ease, visibility 0s, transform 0.75s cubic-bezier(0.22, 1, 0.36, 1), max-height 0.75s cubic-bezier(0.22, 1, 0.36, 1), z-index 0s;
-    }
-
-    .invitation-card-container.popped-out {
-      z-index: 35;
-      height: auto;
-      max-height: 460px;
-      overflow: visible;
-      transform: translateY(-130px) scale(1);
-      pointer-events: auto;
-      transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1), max-height 0.75s cubic-bezier(0.22, 1, 0.36, 1), z-index 0s;
     }
 
     @media (max-width: 480px) {
@@ -700,6 +692,9 @@
           <div id="invitationCardContainer" class="invitation-card-container">
             <article class="invitation-card">
               <div class="invitation-card-border">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full font-display text-[9px] font-bold uppercase tracking-[0.18em] leading-snug text-emerald-700 bg-emerald-50 border border-emerald-200">
+                  Special Invite Pass
+                </span>
                 <span class="font-display text-[9px] font-bold uppercase tracking-[0.2em] leading-snug text-sky-600">
                   Special Birthday Dispatch
                 </span>
@@ -708,6 +703,9 @@
                 </h1>
                 <p class="font-display text-xs font-bold leading-snug text-emerald-600">
                   Turning 14 Years Old
+                </p>
+                <p class="text-[11px] leading-relaxed max-w-[21rem] text-[#334155]">
+                  You have a special invite pass—level 14 is officially here. Pull up for good vibes, music, cake, and stories as we celebrate Vedansh!
                 </p>
                 <p class="text-[11px] leading-relaxed max-w-[21rem] text-[#334155]">
                   Big news—level 14 is officially here. Pull up for good vibes, music, cake, and stories as we celebrate Vedansh!
@@ -777,7 +775,7 @@
 
       <!-- Status Prompt -->
       <p id="statusPrompt" class="text-center font-display text-xs sm:text-sm font-medium text-[var(--mail-muted)] max-w-md px-2">
-        Press and hold the corner button to pry the stamp off the letter.
+        You have a special invite pass—press and hold the corner button to pry the stamp off the letter.
       </p>
     </main>
   </div>
@@ -1137,7 +1135,7 @@
           if (invitationCardContainer) invitationCardContainer.classList.add('popped-out');
           spawnCelebrationMotes();
           if (statusPrompt) {
-            statusPrompt.textContent = 'Vedansh Jain • 14 • 26 Nov at 6:00 PM • ORYN Restaurant and Cafe';
+            statusPrompt.textContent = 'Special Invite Pass Unlocked • Vedansh Jain • 14 • 26 Nov at 6:00 PM • ORYN Restaurant and Cafe';
           }
         }, 180);
       }
